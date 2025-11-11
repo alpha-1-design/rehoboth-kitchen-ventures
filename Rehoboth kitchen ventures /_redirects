@@ -1,0 +1,3 @@
+#The old dashboard is now the new public shop(index.html).
+#The old login page is now the hidden admin_login.html.
+/index.html /admin_login.html401!

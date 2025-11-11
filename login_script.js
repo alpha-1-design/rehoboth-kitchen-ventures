@@ -18,10 +18,18 @@ function handleLoginSubmission(e) {
             errorDisplay.textContent = 'Login successful!';
             errorDisplay.style.color = '#4caf50';
             
-            // Redirect based on the function's response
-            setTimeout(() => {
-                window.location.href = data.redirect; 
-            }, 1000); 
+    // Inside the handleLoginSubmission function, after success:
+if (data.success) {
+    errorDisplay.textContent = 'Login successful!';
+    errorDisplay.style.color = '#4caf50';
+    
+    // *** THIS IS THE LINE YOU MUST CHANGE ***
+    setTimeout(() => {
+        // Change the redirect target from 'dashboard.html' to 'index.html'
+        window.location.href = 'index.html'; 
+    }, 1000); 
+}
+
             
         } else {
             errorDisplay.textContent = data.message;
