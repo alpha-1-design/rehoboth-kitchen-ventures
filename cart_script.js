@@ -112,8 +112,8 @@ function checkout() {
 
 // --- 4. INITIALIZATION (Starts the Cart System) ---
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadCart(); // Load any previously saved items
+document.getElementById('products').addEventListener('click', addToCart);
+  // Load any previously saved items
     renderCart(); // Display the initial cart state
     
     // Event listeners to handle clicks on the product grid and checkout button
@@ -122,5 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
         productsGrid.addEventListener('click', addToCart);
     }
     
+// ... existing code up to line 124
+
+    // Attach the checkout function to the checkout button
     document.getElementById('checkout-button').addEventListener('click', checkout);
-});
+
+
