@@ -1,0 +1,115 @@
+/* Uses colors defined in main.css: 
+   --color-accent-red, --color-button-dark, --color-border, etc. */
+
+.checkout-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* --- Layout for Mobile and Desktop --- */
+.checkout-layout {
+    display: flex;
+    flex-direction: column; /* Stacks sections vertically on mobile */
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .checkout-layout {
+        flex-direction: row; /* Arranges sections side-by-side on desktop */
+    }
+    .form-section {
+        flex: 2; /* Form takes more width */
+    }
+    .summary-section {
+        flex: 1; /* Summary takes less width */
+    }
+}
+
+/* --- Form Styling --- */
+.form-section h2, .summary-section h2 {
+    color: var(--color-text-primary);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"], 
+.form-group input[type="tel"], 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: var(--color-accent-red);
+    outline: none;
+}
+
+/* --- Summary Styling (Mirroring cart.css) --- */
+.summary-section {
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    height: fit-content; /* Adjust height based on content */
+}
+
+/* Styles for cart items injected into the summary */
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    padding: 5px 0;
+}
+
+.summary-total-line {
+    border-top: 1px dashed var(--color-border);
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--color-accent-red);
+}
+
+.note {
+    font-size: 0.8em;
+    color: var(--color-text-secondary);
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+/* --- Confirm Button (Synced with Checkout/Cart button style) --- */
+.confirm-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: var(--color-button-dark); 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.confirm-btn:hover {
+    background-color: var(--color-accent-red);
+}

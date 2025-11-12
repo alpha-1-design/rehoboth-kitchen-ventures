@@ -1,0 +1,175 @@
+:root {
+    /* Colors synchronized with the existing Rehoboth design */
+    --color-background: #ffffff;
+    --color-text-primary: #222; /* Slightly darker text for better contrast */
+    --color-accent-red: #C40033; /* Deep Red/Maroon from "About" heading */
+    --color-button-dark: #A1002A; /* Darker red for the button/checkout */
+    --color-border: #eee;
+    --color-button-hover: #7b0020; /* Even darker hover state */
+    --color-quantity-bg: #f5f5f5;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 20px;
+}
+
+.cart-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px; /* Reduced padding slightly */
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+h1 {
+    color: var(--color-accent-red);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+/* --- Cart Item Styling Fixes --- */
+.cart-item {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically for mobile view */
+    justify-content: space-between;
+    align-items: flex-start; /* Align all items to the start */
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure item details take full width */
+    margin-bottom: 10px;
+}
+
+.item-details img {
+    /* (Assuming you'll add image later) */
+    width: 0; 
+    height: 0; 
+    margin-right: 0;
+}
+
+.item-details h3 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure controls take full width */
+    justify-content: space-between; /* Space out price, quantity, and subtotal */
+    padding-left: 0;
+}
+
+.item-price {
+    /* Display the unit price */
+    font-size: 1em;
+    font-weight: normal;
+    color: #666;
+    min-width: 70px; /* Give it a fixed minimum width for alignment */
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd; /* Slightly lighter border */
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.quantity-controls button {
+    background: var(--color-quantity-bg);
+    border: none;
+    padding: 6px 10px; /* Smaller padding for a tighter look */
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s;
+    line-height: 1; /* Helps with button height consistency */
+}
+
+.quantity-controls span {
+    padding: 0 10px;
+    font-weight: bold;
+    min-width: 15px;
+    text-align: center;
+}
+
+.item-subtotal {
+    /* This is the final calculated price for the item */
+    font-weight: bold;
+    font-size: 1.1em;
+    min-width: 90px; /* Give it a fixed minimum width for alignment */
+    text-align: right;
+    color: var(--color-accent-red);
+}
+
+/* --- Cart Summary Styling --- */
+.cart-summary {
+    max-width: 350px;
+    margin-top: 30px;
+    margin-left: auto;
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    /* Ensure the summary box stays readable on small screens */
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.total-line {
+    border-top: 2px dashed var(--color-border);
+    padding-top: 15px;
+    margin-top: 10px;
+    font-size: 1.3em;
+    color: var(--color-accent-red);
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    /* Syncs button color with primary accent */
+    background-color: var(--color-button-dark); 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: var(--color-button-hover);
+}
+
+.hidden {
+    display: none !important;
+}
+/* Add this to your cart.css or main.css */
+.contact-bar {
+    background-color: #FFC066; /* Orange/Yellow color from your screenshot */
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 20px; /* Space between bar and cart content */
+}

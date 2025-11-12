@@ -1,0 +1,380 @@
+/*
+ * Rehoboth Kitchen Ventures - Complete Stylesheet
+ * Includes styling for fixed header, contact bar, About Us, image galleries, and cart modal.
+ */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; 
+    color: #333; 
+    margin: 0;
+    padding: 0;
+    /* Padding to accommodate fixed header (approx 40px) and contact bar (approx 40px) */
+    padding-top: 100px; 
+}
+
+/* --- Fixed Header and Contact Bar --- */
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #fff; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    z-index: 1000; 
+    box-sizing: border-box;
+}
+
+.logo-img {
+    height: 40px; 
+    width: auto; 
+    display: block;
+}
+
+.contact-bar {
+    position: fixed;
+    top: 60px; /* Positioned right below the main header */
+    left: 0;
+    width: 100%;
+    background-color: #f8c050; /* Warm, inviting color */
+    color: #333;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 1em;
+    font-weight: bold;
+    z-index: 999; 
+}
+
+.contact-bar a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.contact-separator {
+    margin: 0 5px; /* Spacing for the | separator */
+}
+
+/* Desktop Navigation List */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #e63946; /* Accent color on hover */
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+}
+
+/* --- About Us/Location Section Styles --- */
+.about-section {
+    background-color: #ffffff;
+    padding: 60px 40px;
+    display: flex; 
+    gap: 40px;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.about-section h2 {
+    color: #e63946;
+    margin-top: 0;
+    font-size: 2.2em;
+}
+
+.about-section h3 {
+    color: #f8c050; 
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.about-content, .location-details {
+    flex: 1; 
+}
+
+.location-details ul {
+    list-style: none; 
+    padding: 0;
+}
+
+.location-details li {
+    margin-bottom: 15px;
+    padding-left: 25px; 
+    position: relative;
+    line-height: 1.4; 
+}
+
+.location-details li::before {
+    content: "✓"; 
+    color: #28a745; 
+    font-weight: bold;
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    font-size: 1.2em;
+}
+
+.contact-cta {
+    margin-top: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* --- Gallery Section Styles --- */
+.product-category {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+}
+
+.product-category h2 {
+    text-align: center;
+    color: #e63946;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.image-gallery {
+    display: grid;
+    /* Responsive Grid: 2 columns on small screens, 4 on medium/large screens */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    display: block;
+}
+
+/* --- Product Info Card Styling (Cart related) --- */
+.product-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.product-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    color: #e63946;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.add-to-cart {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 5px; /* Added margin for better spacing */
+}
+
+.add-to-cart:hover {
+    background-color: #1e7e34;
+}
+
+/* --- Lightbox/Modal Styles (for full image view) --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000; 
+    padding-top: 50px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90%;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.lightbox-close:hover {
+    color: #e63946;
+}
+
+/* --- Cart Button in Header --- */
+.cart-button {
+    background-color: #e63946; 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-weight: bold;
+}
+
+.cart-count {
+    background-color: #f8c050; 
+    color: #333;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+/* --- Cart Modal (Sidebar) Styles --- */
+.cart-modal {
+    display: none; 
+    position: fixed;
+    z-index: 2500; 
+    top: 0;
+    right: 0;
+    width: 350px; 
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    overflow-y: auto;
+}
+
+.cart-content {
+    padding: 20px;
+}
+
+.close-cart {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.9em;
+}
+
+.cart-summary {
+    border-top: 2px solid #e63946;
+    padding-top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #25D366; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* --- Footer and Link Styling --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: white; /* Make link text white */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #f8c050; /* Light yellow hover color */
+}
+
+/* --- Media Queries (Mobile Responsiveness) --- */
+
+@media (max-width: 768px) {
+    
+    /* Contact Bar Fix on Mobile */
+    .contact-bar {
+        font-size: 0.75em; /* Shrink text to prevent wrapping too much */
+        line-height: 1.2;
+    }
+    
+    /* Stack the About Us section content */
+    .about-section {
+        flex-direction: column;
+        padding: 30px 15px;
+    }
+
+    /* Reduce cart sidebar width on very small screens */
+    .cart-modal {
+        width: 100%;
+        max-width: 300px;
+    }
+}

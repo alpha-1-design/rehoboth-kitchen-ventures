@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Rehoboth Ventures</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script> 
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    
+    <header class="main-nav">
+        <div class="logo-container">
+            <img src="rehoboth-logo.jpg" alt="Rehoboth Logo" class="logo-img">
+            <span class="site-title">Rehoboth Ventures</span>
+        </div> 
+        <div class="nav-icons">
+            <a href="cart.html" class="cart-icon" title="Shopping Cart">🛒</a>
+            <button class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" title="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop Products</a>
+            <a href="#branches">Our Branches</a>
+            <a href="cart.html">View Cart (🛒)</a>
+        </nav>
+    </header>
+
+    <nav class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop Products</a>
+        <a href="#branches">Our Branches</a>
+        <a href="cart.html">View Cart (🛒)</a>
+    </nav>
+    
+    <div class="contact-bar">
+        <span>📞 Call: +233 545 480 074</span> | 
+        <span>📞 +233 200 159 500</span> | 
+        <span>📧 Email: gracee14.gn@gmail.com</span>
+    </div>
+
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+
+        <div class="checkout-layout">
+            
+            <div class="form-section">
+                <h2>1. Delivery & Contact Details</h2>
+                <form id="customer-info-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number (WhatsApp) *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g., 0545480074" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Delivery Location (City/Town/Area) *</label>
+                        <input type="text" id="location" name="location" placeholder="e.g., Kumasi, Ejisu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Specific Address / Nearest Landmark</label>
+                        <textarea id="address" name="address" rows="3" placeholder="e.g., Opposite Melcom at Ejisu roundabout"></textarea>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="summary-section">
+                <h2>2. Order Summary</h2>
+                <div id="checkout-summary">
+                    <p class="loading-message">Loading order details...</p>
+                </div>
+                
+                <p class="note">
+                    * By clicking "Confirm Order," a WhatsApp chat will open with your order details and contact information.
+                </p>
+
+                <button type="submit" form="customer-info-form" id="confirm-whatsapp-order" class="confirm-btn">
+                    Confirm Order & Send via WhatsApp
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="checkout.js"></script>
+    <footer class="main-footer">
+    <div class="footer-container">
+        
+        <div class="footer-column contact-info">
+            <h3>Get In Touch</h3>
+            <p>📞 Call: +233 545 480 074</p>
+            <p>📞 Call: +233 200 159 500</p>
+            <p>📧 Email: gracee14.gn@gmail.com</p>
+            <div class="social-links">
+                <a href="#" aria-label="WhatsApp" class="social-icon">💬</a>
+                <a href="#" aria-label="Facebook" class="social-icon">📘</a>
+                <a href="#" aria-label="Instagram" class="social-icon">📸</a>
+            </div>
+        </div>
+
+        <div class="footer-column quick-links">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop Appliances</a>
+            <a href="cart.html">Shopping Cart</a>
+            <a href="#">Shipping & Returns</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+
+        <div class="footer-column branches">
+            <h3>Our Location</h3>
+            <p><strong>Kumasi Ejisu Branch</strong></p>
+            <p>Find us for all your essential home and kitchen needs.</p>
+            <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Rehoboth Kitchen Ventures. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

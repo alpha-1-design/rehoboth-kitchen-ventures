@@ -1,143 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Official website for Rehoboth Kitchen Ventures. Shop high-quality kitchen appliances, home gadgets, and electronics in Kumasi, Ghana. Secure ordering via WhatsApp.">
-  <meta name="keywords" content="Rehoboth Kitchen Ventures, kitchen appliances Kumasi, home gadgets Ghana, electronics Kumasi, affordable appliances">
-  <meta name="author" content="Rehoboth Kitchen Ventures">
-  <title>Rehoboth Kitchen Ventures | Quality Appliances in Kumasi</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="universal_style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rehoboth Kitchen Ventures - Home</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="logo">Rehoboth Kitchen Ventures</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#kitchen">Kitchen</a></li>
-        <li><a href="#gadgets">Gadgets</a></li>
-        <li><a href="#electronics">Electronics</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <header class="main-nav">
+        <div class="logo-container">
+            <img src="rehoboth-logo.jpg" alt="Rehoboth Logo" class="logo-img">
+            <span class="site-title">Rehoboth Ventures</span>
+        </div> 
+
+        <div class="nav-icons">
+            <a href="cart.html" class="cart-icon" title="Shopping Cart">🛒</a>
+            
+            <button class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" title="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop Products</a>
+            <a href="#branches">Our Branches</a>
+            <a href="cart.html">View Cart (🛒)</a>
+        </nav>
+    </header>
+
+    <nav class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop Products</a>
+        <a href="#branches">Our Branches</a>
+        <a href="cart.html">View Cart (🛒)</a>
     </nav>
-    
-    <div class="cart-icon" id="cart-btn">
-      🛒 <span id="cart-count">0</span>
+
+    <div class="contact-bar">
+        <span>📞 Call: +233 545 480 074</span> | 
+        <span>📞 +233 200 159 500</span> | 
+        <span>📧 Email:gracee14.gn@gmail.com</span>
     </div>
-  </header>
 
-  <section id="home" class="hero">
-    <h1>Upgrade Your Home, One Appliance at a Time</h1>
-    <p>Shop trusted appliances and gadgets at unbeatable prices. Fast delivery in Kumasi!</p>
-    <a href="#products-grid" class="btn">Shop Now</a> 
-  </section>
+    <section class="promo-banner">
+        <div class="promo-content">
+            <h2>🚚 Free Delivery in Kumasi! 🚚</h2>
+            <p>Order any two major appliances this week and get free delivery straight to your door.</p>
+            <a href="products.html" class="banner-btn">Shop Now & Save!</a>
+        </div>
+    </section>
 
-  <section id="products-grid"> 
-      
-      <section class="product-section">
-          <h2>Kitchen Appliances</h2>
-          <div class="product-grid">
-              <div class="product-card" data-product-id="K001" data-name="High-Speed Blender" data-price="250">
-                  <img src="images/blender.jpg" alt="Blender">
-                  <h3>High-Speed Blender</h3>
-                  <p>Powerful and durable for smoothies and soups.</p>
-                  <button class="add-to-cart">Add to Cart</button>
-              </div>
+    <div class="content-container">
 
-              <div class="product-card" data-product-id="K002" data-name="Microwave Oven" data-price="400">
-                  <img src="images/microwave.jpg" alt="Microwave">
-                  <h3>Microwave Oven</h3>
-                  <p>Efficient heating for everyday use.</p>
-                  <button class="add-to-cart">Add to Cart</button>
-              </div>
+        <section class="about-section">
+            <h1>About Rehoboth Kitchen Ventures</h1>
+            
+            <p>Welcome to Rehoboth Kitchen Ventures, your trusted source for high-quality Kitchen Appliances, Home Appliances, and Electronics in Kumasi. We are dedicated to providing durable products and excellent service to help you build a modern, efficient home and kitchen.</p>
+            
+            <p>Our mission is to bring convenience and quality into every household, ensuring our clients find exactly what they need, whether they are setting up a new home or upgrading their existing equipment.</p>
+        </section>
 
-              <div class="product-card" data-product-id="K003" data-name="2-Slice Toaster" data-price="180">
-                  <img src="images/toaster.jpg" alt="Toaster">
-                  <h3>2-Slice Toaster</h3>
-                  <p>Compact design for quick breakfasts.</p>
-                  <button class="add-to-cart">Add to Cart</button>
-              </div>
+        <hr>
 
-              <div class="product-card" data-product-id="K004" data-name="Electric Rice Cooker" data-price="300">
-                  <img src="images/ricecooker.jpg" alt="Rice Cooker">
-                  <h3>Electric Rice Cooker</h3>
-                  <p>Perfect rice every time with auto shutoff.</p>
-                  <button class="add-to-cart">Add to Cart</button>
-              </div>
+        <section class="branches-section" id="branches">
+            <h2>Our Branches</h2>
+            
+            <div class="branch-list">
+                <div class="branch-item">
+                    <span class="icon map-pin">📍</span> 
+                    <p><strong>Kumasi Ejisu Branch:</strong> Find us for all your essential home and kitchen needs</p>
+                </div>
+                <div class="branch-item">
+                    <span class="icon checkmark">✅</span> 
+                    <p><strong>Opening Hours:</strong> Monday - Saturday, 8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            
+            <a href="https://www.google.com/maps/search/Kumasi+Ejisu" class="btn-location" target="_blank">View All Locations on Map</a> 
 
-              <div class="product-card" data-product-id="K005" data-name="Electric Kettle" data-price="150">
-                  <img src="images/kettle.jpg" alt="Electric Kettle">
-                  <h3>Electric Kettle</h3>
-                  <p>Quick-boil feature with 1.8L capacity.</p>
-                  <button class="add-to-cart">Add to Cart</button>
-              </div>
+        </section>
 
-              <div class="product-card" data-product-id="K006" data-name="Hand Mixer" data-price="220">
-                  <img src="images/mixer.jpg" alt="Mixer">
-                  <h3>Hand Mixer</h3>
-                  <p>5-speed settings for flexible mixing.</p>
-                  <button class="add-to-cart">Add to Cart</button>
-              </div>
+    </div>
 
-              <div class="product-card" data-product-id="K007" data-name="Mini Fridge" data-price="750">
-                  <img src="images/fridge.jpg" alt="Mini Fridge">
-                  <h3>Mini Fridge</h3>
-                  <p>Compact cooling solution for small spaces.</p>
-                  <button class="add-to-cart">Add to Cart</button>
-              </div>
-          </div>
-      </section>
-
-      <section id="gadgets" class="product-section">
-          <h2>Home Gadgets</h2>
-          <div class="product-grid">
-              <div class="product-card" data-product-id="G001" data-name="Standing Fan" data-price="280"><img src="images/fan.jpg" alt="Fan"><h3>Standing Fan</h3><p>Adjustable height and powerful motor.</p><button class="add-to-cart">Add to Cart</button></div>
-              <div class="product-card" data-product-id="G002" data-name="Steam Iron" data-price="190"><img src="images/iron.jpg" alt="Iron"><h3>Steam Iron</h3><p>Non-stick soleplate for smooth ironing.</p><button class="add-to-cart">Add to Cart</button></div>
-              <div class="product-card" data-product-id="G003" data-name="Rechargeable Lamp" data-price="120"><img src="images/lamp.jpg" alt="Lamp"><h3>Rechargeable Lamp</h3><p>Portable LED lamp with long battery life.</p><button class="add-to-cart">Add to Cart</button></div>
-              <div class="product-card" data-product-id="G004" data-name="Extension Board" data-price="90"><img src="images/extension.jpg" alt="Extension Board"><h3>Extension Board</h3><p>5-socket surge-protected power strip.</p><button class="add-to-cart">Add to Cart</button></div>
-              <div class="product-card" data-product-id="G005" data-name="Air Humidifier" data-price="250"><img src="images/humidifier.jpg" alt="Humidifier"><h3>Air Humidifier</h3><p>Improves air quality in your room.</p><button class="add-to-cart">Add to Cart</button></div>
-              <div class="product-card" data-product-id="G006" data-name="Digital Scale" data-price="160"><img src="images/scale.jpg" alt="Digital Scale"><h3>Digital Scale</h3><p>Accurate and easy to use.</p><button class="add-to-cart">Add to Cart</button></div>
-              <div class="product-card" data-product-id="G007" data-name="Bluetooth Speaker" data-price="300"><img src="images/speaker.jpg" alt="Bluetooth Speaker"><h3>Bluetooth Speaker</h3><p>Powerful sound, wireless connection.</p><button class="add-to-cart">Add to Cart</button></div>
-          </div>
-      </section>
-
-      <section id="electronics" class="product-section">
-          <h2>Electronics</h2>
-          <div class="product-grid">
-              <div class="product-card" data-product-id="E001" data-name="32-inch Smart TV" data-price="1100"><img src="images/tv.jpg" alt="Smart TV"><h3>32-inch Smart TV</h3><p>HD display with streaming apps built in.</p><button class="add-to-cart">Add to Cart</button></div>
-              <div class="product-card" data-product-id="E002" data-name="Soundbar" data-price="600"><img src="images/soundbar.jpg" alt="Soundbar"><h3>Soundbar</h3><p>Deep bass and surround sound effect.</p><button class="add-to-cart">Add to Cart</button></div>
-              <div class="product-card" data-product-id="E003" data-name="DVD Player" data-price="280"><img src="images/dvd.jpg" alt="DVD Player"><h3>DVD Player</h3><p>Sleek design with USB movie support.</p><button class="add-to-cart">Add to Cart</button></div>
-              <div class="product-card" data-product-id="E004" data-name="Feature Phone" data-price="230"><img src="images/phone.jpg" alt="Feature Phone"><h3>Feature Phone</h3><p>Strong battery and dual SIM.</p><button class="add-to-cart">Add to Cart</button></div>
-              <div class="product-card" data-product-id="E005" data-name="WiFi Router" data-price="320"><img src="images/router.jpg" alt="WiFi Router"><h3>WiFi Router</h3><p>Stable and fast internet connection.</p><button class="add-to-cart">Add to Cart</button></div>
-              <div class="product-card" data-product-id="E006" data-name="Security Camera" data-price="400"><img src="images/camera.jpg" alt="Security Camera"><h3>Security Camera</h3><p>HD night vision with app control.</p><button class="add-to-cart">Add to Cart</button></div>
-              <div class="product-card" data-product-id="E007" data-name="Power Bank" data-price="180"><img src="images/powerbank.jpg" alt="Power Bank"><h3>Power Bank</h3><p>10000mAh fast-charging power bank.</p><button class="add-to-cart">Add to Cart</button></div>
-          </div>
-      </section>
-
-  </section> <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>📍 Kumasi, Ghana</p>
-    <p>📞 <a href="tel:+233200159500">+233 20 015 9500</a></p>
-    <p>💬 <a href="https://wa.me/233200159500" target="_blank">Chat on WhatsApp</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 Rehoboth Kitchen Ventures. All Rights Reserved.</p>
-  </footer>
-
-  <div id="cart-sidebar" class="cart-sidebar">
-    <h3>Your Order</h3>
-    <ul id="cart-items"></ul> 
-    <p class="cart-total">Total: GHS <span id="cart-total">0.00</span></p> 
-    <button id="checkout-button" class="btn">Proceed to WhatsApp Order</button> 
-  </div>
-
-  <script src="login_script.js"></script> 
-  <script src="cart_script.js"></script>
-</body>
+    </body>
 </html>

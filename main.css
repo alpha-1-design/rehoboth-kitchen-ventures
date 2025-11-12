@@ -1,0 +1,204 @@
+:root {
+    /* Synchronized Colors */
+    --color-background: #ffffff;
+    --color-text-primary: #222; 
+    --color-text-secondary: #666;
+    --color-accent-red: #C40033; /* Deep Red/Maroon for headings and key accents */
+    --color-contact-bar: #FFC066; /* Bright Orange/Yellow */
+    --color-button-dark: #A1002A;
+    --color-border: #eee;
+}
+
+/* --- BASE STYLES --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Content Wrapper */
+.content-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Synchronized Typography (Headings) */
+h1, h2 {
+    color: var(--color-accent-red);
+    margin-bottom: 20px;
+}
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; margin-top: 30px; }
+
+/* --- 1. SYNCHRONIZED CONTACT BAR --- */
+.contact-bar {
+    background-color: var(--color-contact-bar);
+    color: var(--color-text-primary);
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: 0; 
+    margin-bottom: 0;
+}
+
+/* --- 2. MAIN NAVIGATION HEADER (Mobile-First Layout) --- */
+.main-nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 15px; 
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-background);
+}
+
+.logo-container { display: flex; align-items: center; }
+.site-title { font-weight: bold; font-size: 1.2em; color: var(--color-accent-red); }
+
+/* Logo Image Size Control */
+.logo-img {
+    width: 30px; 
+    height: 30px; 
+    object-fit: contain; 
+    margin-right: 8px;
+    display: block; 
+}
+
+.nav-icons { display: flex; align-items: center; }
+
+/* Hides the inline text links on mobile */
+.nav-links { display: none; }
+
+.cart-icon { font-size: 1.5em; text-decoration: none; color: var(--color-text-primary); margin-right: 15px; }
+
+/* HAMBURGER ICON FIX (CRITICAL SECTION) */
+.menu-toggle {
+    background: none; 
+    border: 1px solid var(--color-accent-red); /* Added border for contrast */
+    border-radius: 4px;
+    cursor: pointer; 
+    padding: 5px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-around;
+    height: 20px;
+}
+.bar {
+    display: block; 
+    width: 25px; 
+    height: 3px;
+    /* FIX: Changed color to brand red so it stands out on white header */
+    background-color: var(--color-accent-red); 
+    margin: 3px 0; 
+    transition: all 0.3s linear;
+}
+
+/* --- 3. MOBILE MENU (Off-Canvas) STYLING --- */
+.mobile-menu {
+    display: none; position: absolute; top: 50px; right: 0; width: 60%;
+    background-color: #f9f9f9; border-left: 1px solid var(--color-border);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); z-index: 10;
+}
+.mobile-menu.active { display: block; }
+.mobile-menu a {
+    display: block; padding: 12px 20px; text-decoration: none;
+    color: var(--color-text-primary); border-bottom: 1px solid var(--color-border);
+}
+.mobile-menu a:hover { background-color: var(--color-border); color: var(--color-accent-red); }
+
+/* --- 4. PROMOTIONAL BANNER STYLING --- */
+.promo-banner {
+    background-color: var(--color-accent-red); 
+    color: var(--color-background); 
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+}
+
+.promo-content h2 {
+    color: var(--color-background); 
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.promo-content p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.banner-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--color-contact-bar); 
+    color: var(--color-text-primary); 
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.banner-btn:hover {
+    background-color: #fce882;
+}
+
+/* --- 5. FOOTER STYLING (Placeholder/Default) --- */
+.main-footer {
+    background-color: #333; 
+    color: #fff;
+    padding: 30px 20px 0;
+    margin-top: 40px; 
+    font-size: 0.9em;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+.footer-column h3 {
+    color: var(--color-contact-bar);
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+}
+
+.footer-column p { margin: 5px 0; line-height: 1.5; }
+.footer-column a { display: block; color: #ccc; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+.footer-column a:hover { color: var(--color-accent-red); }
+
+.social-links { margin-top: 15px; }
+.social-icon { display: inline-block; font-size: 1.5em; margin-right: 15px; color: #ccc; text-decoration: none; }
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+/* --- 6. DESKTOP/TABLET MEDIA QUERIES --- */
+@media (min-width: 768px) {
+    /* Header (shows text links) */
+    .menu-toggle, .mobile-menu { display: none !important; }
+    .main-nav { justify-content: space-around; }
+    .nav-links { display: block !important; position: static; }
+    .nav-links a { text-decoration: none; color: var(--color-text-primary); margin-left: 20px; font-weight: 500; }
+    .nav-links a:hover { color: var(--color-accent-red); }
+
+    /* Footer (shows 3 columns) */
+    .footer-container {
+        flex-direction: row; 
+        justify-content: space-between;
+        padding-bottom: 40px;
+    }
+    .footer-column { width: 30%; }
+}

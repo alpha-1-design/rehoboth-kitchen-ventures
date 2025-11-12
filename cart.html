@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="main.css"> 
+    <link rel="stylesheet" href="cart.css"> 
+</head>
+<body>
+    
+    <div class="contact-bar">
+        <span>📞 Call: +233 545 480 074</span> | 
+        <span>📞 +233 200 159 500</span> | 
+        <span>📧 Email: gracee14.gn@gmail.com</span>
+    </div>
+
+    <div class="cart-container">
+        <h1>Your Shopping Cart</h1>
+        <div id="cart-items">
+            </div>
+        
+        <div class="cart-summary">
+            <div class="summary-line"><span>Subtotal:</span><span id="subtotal">₵0.00</span></div>
+            <div class="summary-line"><span>Shipping:</span><span id="shipping">₵25.00</span></div>
+            <div class="summary-line total-line"><strong>Total:</strong><strong id="total">₵25.00</strong></div>
+            
+            <button class="checkout-btn" id="whatsappCheckout">Proceed to Checkout</button>
+        </div>
+
+        <p id="empty-cart-message" class="hidden">Your cart is currently empty.</p>
+    </div>
+
+    <script src="cart.js"></script>
+    <footer class="main-footer">
+    <div class="footer-container">
+        
+        <div class="footer-column contact-info">
+            <h3>Get In Touch</h3>
+            <p>📞 Call: +233 545 480 074</p>
+            <p>📞 Call: +233 200 159 500</p>
+            <p>📧 Email: graccee14.gn@gmail.com</p>
+            <div class="social-links">
+                <a href="#" aria-label="WhatsApp" class="social-icon">💬</a>
+                <a href="#" aria-label="Facebook" class="social-icon">📘</a>
+                <a href="#" aria-label="Instagram" class="social-icon">📸</a>
+            </div>
+        </div>
+
+        <div class="footer-column quick-links">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop Appliances</a>
+            <a href="cart.html">Shopping Cart</a>
+            <a href="#">Shipping & Returns</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+
+        <div class="footer-column branches">
+            <h3>Our Location</h3>
+            <p><strong>Kumasi Ejisu Branch</strong></p>
+            <p>Find us for all your essential home and kitchen needs.</p>
+            <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Rehoboth Kitchen Ventures. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
