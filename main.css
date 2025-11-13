@@ -202,3 +202,50 @@ h2 { font-size: 1.5em; margin-top: 30px; }
     }
     .footer-column { width: 30%; }
 }
+/* Base styling for the product card (adjust if you already have these) */
+.product-card {
+    /* Base layout and appearance */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden; /* Important for clean corners */
+    
+    /* --- ANIMATION SETUP --- */
+    /* This line is critical! It makes all visual changes smooth over 0.3 seconds. */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect: The card lifts up and gains a shadow */
+.product-card:hover {
+    /* 1. Subtle Lift */
+    /* Scales the card slightly (2%) to make it look like it's lifting */
+    transform: scale(1.02);
+    
+    /* 2. Enhanced Shadow */
+    /* Adds a soft, prominent shadow */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); 
+}
+
+/* Optional: Improve the look of the "Add to Cart" button */
+.add-to-cart-btn {
+    /* Base button styling */
+    padding: 10px 20px;
+    background-color: #007bff; /* Primary blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    
+    /* Button Animation Setup */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Button Hover Effect: Changes color and slightly sinks */
+.add-to-cart-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    /* Optional: Small press effect */
+    transform: translateY(-1px);
+}
