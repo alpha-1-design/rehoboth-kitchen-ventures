@@ -9,6 +9,23 @@
     --color-border: #eee;
 }
 
+/* ========================================= */
+/* 1. ANIMATION KEYFRAMES                    */
+/* ========================================= */
+
+@keyframes card-fade-in {
+    /* Starting state: slightly below and transparent */
+    0% {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    /* Ending state: normal position and fully visible */
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* --- BASE STYLES --- */
 body {
     font-family: Arial, sans-serif;
@@ -33,7 +50,7 @@ h1, h2 {
 h1 { font-size: 2em; }
 h2 { font-size: 1.5em; margin-top: 30px; }
 
-/* --- 1. SYNCHRONIZED CONTACT BAR --- */
+/* --- 2. SYNCHRONIZED CONTACT BAR --- */
 .contact-bar {
     background-color: var(--color-contact-bar);
     color: var(--color-text-primary);
@@ -45,7 +62,7 @@ h2 { font-size: 1.5em; margin-top: 30px; }
     margin-bottom: 0;
 }
 
-/* --- 2. MAIN NAVIGATION HEADER (Mobile-First Layout) --- */
+/* --- 3. MAIN NAVIGATION HEADER (Mobile-First Layout) --- */
 .main-nav {
     display: flex;
     justify-content: space-between; 
@@ -77,7 +94,7 @@ h2 { font-size: 1.5em; margin-top: 30px; }
 /* HAMBURGER ICON FIX (CRITICAL SECTION) */
 .menu-toggle {
     background: none; 
-    border: 1px solid var(--color-accent-red); /* Added border for contrast */
+    border: 1px solid var(--color-accent-red); 
     border-radius: 4px;
     cursor: pointer; 
     padding: 5px;
@@ -90,13 +107,12 @@ h2 { font-size: 1.5em; margin-top: 30px; }
     display: block; 
     width: 25px; 
     height: 3px;
-    /* FIX: Changed color to brand red so it stands out on white header */
     background-color: var(--color-accent-red); 
     margin: 3px 0; 
     transition: all 0.3s linear;
 }
 
-/* --- 3. MOBILE MENU (Off-Canvas) STYLING --- */
+/* --- 4. MOBILE MENU (Off-Canvas) STYLING --- */
 .mobile-menu {
     display: none; position: absolute; top: 50px; right: 0; width: 60%;
     background-color: #f9f9f9; border-left: 1px solid var(--color-border);
@@ -109,7 +125,7 @@ h2 { font-size: 1.5em; margin-top: 30px; }
 }
 .mobile-menu a:hover { background-color: var(--color-border); color: var(--color-accent-red); }
 
-/* --- 4. PROMOTIONAL BANNER STYLING --- */
+/* --- 5. PROMOTIONAL BANNER STYLING --- */
 .promo-banner {
     background-color: var(--color-accent-red); 
     color: var(--color-background); 
@@ -144,7 +160,7 @@ h2 { font-size: 1.5em; margin-top: 30px; }
     background-color: #fce882;
 }
 
-/* --- 5. FOOTER STYLING (Placeholder/Default) --- */
+/* --- 6. FOOTER STYLING (Placeholder/Default) --- */
 .main-footer {
     background-color: #333; 
     color: #fff;
@@ -185,7 +201,7 @@ h2 { font-size: 1.5em; margin-top: 30px; }
     color: #aaa;
 }
 
-/* --- 6. DESKTOP/TABLET MEDIA QUERIES --- */
+/* --- 7. DESKTOP/TABLET MEDIA QUERIES --- */
 @media (min-width: 768px) {
     /* Header (shows text links) */
     .menu-toggle, .mobile-menu { display: none !important; }
@@ -202,7 +218,56 @@ h2 { font-size: 1.5em; margin-top: 30px; }
     }
     .footer-column { width: 30%; }
 }
-/* Base styling for the product card (adjust if you already have these) */
+
+/* ========================================= */
+/* 8. SEARCH BAR STYLING & ANIMATION (NEW)   */
+/* ========================================= */
+
+.search-container {
+    padding: 20px 40px;
+    text-align: center;
+    background-color: var(--color-background); 
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 30px; 
+}
+
+#search-input {
+    padding: 10px 15px;
+    width: 300px;
+    max-width: 70%;
+    border: 1px solid var(--color-border); 
+    border-radius: 5px 0 0 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: var(--color-accent-red); 
+    box-shadow: 0 0 8px rgba(196, 0, 51, 0.3); 
+}
+
+#search-button {
+    padding: 10px 15px;
+    background-color: var(--color-accent-red); 
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#search-button:hover {
+    background-color: var(--color-button-dark); 
+    transform: translateY(-1px); 
+}
+
+/* ========================================= */
+/* 9. PRODUCT CARD STYLES (With Animations)  */
+/* ========================================= */
+
 .product-card {
     /* Base layout and appearance */
     background-color: #ffffff;
@@ -210,21 +275,21 @@ h2 { font-size: 1.5em; margin-top: 30px; }
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    overflow: hidden; /* Important for clean corners */
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
     
-    /* --- ANIMATION SETUP --- */
-    /* This line is critical! It makes all visual changes smooth over 0.3 seconds. */
+    /* --- HOVER ANIMATION SETUP --- */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    
+    /* --- LOADING ANIMATION APPLICATION --- */
+    /* Start the element transparent and below its final position */
+    opacity: 0; 
+    animation: card-fade-in 0.5s ease-out forwards;
 }
 
 /* Hover Effect: The card lifts up and gains a shadow */
 .product-card:hover {
-    /* 1. Subtle Lift */
-    /* Scales the card slightly (2%) to make it look like it's lifting */
     transform: scale(1.02);
-    
-    /* 2. Enhanced Shadow */
-    /* Adds a soft, prominent shadow */
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); 
 }
 
@@ -232,7 +297,7 @@ h2 { font-size: 1.5em; margin-top: 30px; }
 .add-to-cart-btn {
     /* Base button styling */
     padding: 10px 20px;
-    background-color: #007bff; /* Primary blue color */
+    background-color: #007bff; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -245,7 +310,21 @@ h2 { font-size: 1.5em; margin-top: 30px; }
 
 /* Button Hover Effect: Changes color and slightly sinks */
 .add-to-cart-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    /* Optional: Small press effect */
+    background-color: #0056b3; 
     transform: translateY(-1px);
 }
+
+/* ========================================= */
+/* 10. STAGGERED ANIMATION DELAY             */
+/* ========================================= */
+
+.product-card:nth-child(2) { animation-delay: 0.1s; }
+.product-card:nth-child(3) { animation-delay: 0.2s; }
+.product-card:nth-child(4) { animation-delay: 0.3s; }
+.product-card:nth-child(5) { animation-delay: 0.4s; }
+.product-card:nth-child(6) { animation-delay: 0.5s; }
+.product-card:nth-child(7) { animation-delay: 0.6s; }
+.product-card:nth-child(8) { animation-delay: 0.7s; }
+.product-card:nth-child(9) { animation-delay: 0.8s; }
+.product-card:nth-child(10) { animation-delay: 0.9s; }
+/* Continue the pattern as needed for your grid size */
