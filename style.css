@@ -378,3 +378,27 @@ footer a:hover {
         max-width: 300px;
     }
 }
+/* Add visual feedback for navigation links */
+.navbar a:hover {
+    color: #4CAF50; /* Change to a color you like */
+    text-decoration: underline;
+    transform: translateY(-2px); /* Makes it look like it's lifting */
+    transition: all 0.3s ease;
+}
+
+.navbar a:active {
+    color: #333; /* Color when the user is actively pressing the button */
+    transform: translateY(0); /* Sinks back down */
+}
+
+/* Add feedback for the main 'order now' button */
+.btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:active {
+    background-color: #388e3c; /* Even darker green when pressed */
+    transform: translateY(1px);
+}
