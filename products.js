@@ -130,3 +130,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Filtering when the search button is clicked
     searchButton.addEventListener('click', filterProducts);
 });
+// Wait until the HTML document is fully loaded before running the script
+document.addEventListener('DOMContentLoaded', (event) => {
+
+    // 1. Get references to the input field and the button using their IDs
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+
+    // 2. Add an event listener to the search button for a 'click' event
+    searchButton.addEventListener('click', function() {
+        
+        // This runs when the button is clicked
+
+        // Get the value typed by the user in the input field
+        const searchTerm = searchInput.value;
+
+        // Display an alert to confirm the button is working and show the search term
+        if (searchTerm.trim() !== "") {
+            alert('You searched for: ' + searchTerm);
+            // In a real application, you would put code here to filter your product list
+        } else {
+            alert('Please enter a search term.');
+        }
+    });
+
+    // Optional: Allow pressing "Enter" in the input field to search
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            searchButton.click(); // Simulate a button click when Enter is pressed
+        }
+    });
+
+});
