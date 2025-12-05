@@ -130,3 +130,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // Filtering when the search button is clicked
     searchButton.addEventListener('click', filterProducts);
 });
+fetch("https://rehoboth-backend.onrender.com/products")
+  .then(res => res.json())
+  .then(products => {
+    console.log(products);
+
+    // Example: Display on your website
+    const container = document.getElementById("product-list");
+
+    products.forEach(item => {
+      container.innerHTML += `
+        <div class="product-card">
+          <h3>${item.name}</h3>
+          <p>GHS ${item.price}</p>
+        </div>
+      `;
+    });
+  });
+  const container = document.getElementById("product-list");
+
+fetch("https://rehoboth-backend.onrender.com/products")
+  .then(res => res.json())
+  .then(products => {
+    container.innerHTML = ""; // clear container
+    products.forEach(item => {
+      container.innerHTML += `
+        <div class="product-card">
+          <h3>${item.name}</h3>
+          <p>GHS ${item.price}</p>
+        </div>
+      `;
+    });
+  })
+  .catch(err => {
+    console.error("Error loading products:", err);
+    container.innerHTML = "<p>Failed to load products.</p>";
+  });
